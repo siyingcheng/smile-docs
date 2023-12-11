@@ -6,6 +6,7 @@ const ourStoreSidebar = [{ text: "Our Story", link: "/about/our-story" }];
 export default defineConfig({
   title: "Pages build by VitePress",
   description: "A VitePress Pages Site",
+  base: "/smile-docs",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
