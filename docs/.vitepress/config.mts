@@ -1,6 +1,20 @@
 import { defineConfig } from "vitepress";
 
-const ourStoreSidebar = [{ text: "Our Story", link: "/about/our-story" }];
+const appiumSideBar = [
+  {
+    text: "Appium",
+    items: [
+      {
+        text: "Appium Server Setup",
+        link: "/auto-frameworks/appium/appium-setup",
+      },
+      {
+        text: "Appium Client Basic Usage",
+        link: "/auto-frameworks/appium/appium-basic-usage",
+      },
+    ],
+  },
+];
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -13,12 +27,20 @@ export default defineConfig({
       { text: "Home", link: "/" },
       {
         text: "Automation Frameworks",
-        items: [{ text: "Appium", link: "/auto-frameworks/appium" }],
+        items: [
+          {
+            text: "Appium",
+            link: "/auto-frameworks/appium/",
+          },
+        ],
+        activeMatch: "/auto-frameworks/",
       },
       { text: "About", link: "/about/" },
       { text: "Contact", link: "/contact" },
     ],
-    sidebar: {},
+    sidebar: {
+      "/auto-frameworks/appium/": appiumSideBar,
+    },
     socialLinks: [{ icon: "github", link: "https://github.com/siyingcheng" }],
     lastUpdated: {
       text: "Updated at",
@@ -31,5 +53,8 @@ export default defineConfig({
     search: {
       provider: "local",
     },
+  },
+  markdown: {
+    math: true,
   },
 });
