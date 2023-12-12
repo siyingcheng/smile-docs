@@ -99,3 +99,18 @@ Then you can install XCUITest driver with CLI:
 ```shell
 appium driver install xcuitest
 ```
+
+## Install Appium Inspector
+
+[Appium Inspector](https://github.com/appium/appium-inspector) is a GUI inspector
+for mobile apps and more, powered by a (separately installed) Appium server. Appium
+Inspector is basically just an Appium client (like WebdriverIO, Appium's Java client,
+Appium's Python client, etc...) with a user interface. There's an interface for
+specifying which Appium server to use, which capabilities to set, and then interacting
+with elements and other Appium commands once you've started a session.
+
+## Others
+
+**Demo Apps**:
+
+1. From [saucelabs repository](https://github.com/saucelabs/my-demo-app-rn/)

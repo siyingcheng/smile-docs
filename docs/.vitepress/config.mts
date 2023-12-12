@@ -3,6 +3,7 @@ import { defineConfig } from "vitepress";
 const appiumSideBar = [
   {
     text: "Appium",
+    link: "/auto-frameworks/appium/",
     items: [
       {
         text: "Appium Server Setup",
@@ -10,7 +11,11 @@ const appiumSideBar = [
       },
       {
         text: "Appium Client Basic Usage",
-        link: "/auto-frameworks/appium/appium-basic-usage",
+        link: "/auto-frameworks/appium/appium-client-basic-usage",
+      },
+      {
+        text: "Limitations of Appium",
+        link: "/auto-frameworks/appium/appium-limitations",
       },
     ],
   },
