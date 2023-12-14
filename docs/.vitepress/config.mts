@@ -21,6 +21,18 @@ const appiumSideBar = [
   },
 ];
 
+const softwareSidebar = [
+  {
+    text: "Software",
+    items: [
+      {
+        text: "OpenCV4NodeJs for MacOS",
+        link: "/software/opencv4nodejs-macos",
+      },
+    ],
+  },
+];
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Let's do it",
@@ -30,6 +42,11 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
+      {
+        text: "Software",
+        link: "/software/opencv4nodejs-macos",
+        activeMatch: "/software/",
+      },
       {
         text: "Automation Frameworks",
         items: [
@@ -45,6 +62,7 @@ export default defineConfig({
     ],
     sidebar: {
       "/auto-frameworks/appium/": appiumSideBar,
+      "/software/": softwareSidebar,
     },
     socialLinks: [{ icon: "github", link: "https://github.com/siyingcheng" }],
     lastUpdated: {
@@ -57,6 +75,9 @@ export default defineConfig({
     },
     search: {
       provider: "local",
+    },
+    outline: {
+      level: [2, 5],
     },
   },
   markdown: {

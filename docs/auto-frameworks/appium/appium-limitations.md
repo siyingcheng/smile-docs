@@ -11,7 +11,7 @@ categories:
   - Automation Framework
 ---
 
-# Limitations of Appium
+# Limitations of Appium <Badge type="tip" text="Appium" /><Badge type="warning" text="Automation Framework" />
 
 While Appium offers significant benefits for mobile app testing, it also comes with
 limitations and disadvantages that you should be aware of:
