@@ -58,7 +58,6 @@ export default defineConfig({
         activeMatch: "/auto-frameworks/",
       },
       { text: "About", link: "/about/" },
-      { text: "Contact", link: "/contact" },
     ],
     sidebar: {
       "/auto-frameworks/appium/": appiumSideBar,
