@@ -20,3 +20,7 @@ usage, with a focus on Java and the XCUITestDriver.
 :::
 
 ![Appium Architecture](https://www.programsbuzz.com/sites/default/files/inline-images/Picture%202.png)
+
+::: tip
+:bulb: [Official Tutorial](https://appium.github.io/appium.io/docs/) :star2:
+:::

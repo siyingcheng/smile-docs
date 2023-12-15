@@ -14,6 +14,10 @@ const appiumSideBar = [
         link: "/auto-frameworks/appium/appium-client-basic-usage",
       },
       {
+        text: "Image Comparison",
+        link: "/auto-frameworks/appium/appium-image-comparison",
+      },
+      {
         text: "Limitations of Appium",
         link: "/auto-frameworks/appium/appium-limitations",
       },
