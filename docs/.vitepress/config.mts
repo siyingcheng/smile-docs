@@ -18,6 +18,12 @@ const appiumSideBar = [
         link: "/auto-frameworks/appium/appium-image-comparison",
       },
       {
+        text: "iOS",
+        items: [
+          { text: "Touch", link: "/auto-frameworks/appium/ios/touch.md" },
+        ],
+      },
+      {
         text: "Limitations of Appium",
         link: "/auto-frameworks/appium/appium-limitations",
       },

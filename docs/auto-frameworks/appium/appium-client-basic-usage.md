@@ -152,3 +152,36 @@ driver.switchTo().alert().dismiss();
 // get text
 driver.switchTo().alert().getText();
 ```
+
+### Screen Recording
+
+```java
+iosDriver.startRecordingScreen(
+                new IOSStartScreenRecordingOptions()
+                        .withTimeLimit(Duration.ofSeconds(10))
+        );
+        Thread.sleep(5000);
+        String result = iosDriver.stopRecordingScreen();
+        // save video
+        // byte[] video = Base64.getDecoder().decode(result);
+        // Files.write(Path.of("video.mp4"), video);
+        assertFalse(result.isEmpty());
+```
+
+### Rotation
+
+```java
+// Landscape right
+DeviceRotation landscapeRightRotation = new DeviceRotation(0, 0, 90);
+driver.rotate(landscapeRightRotation);
+
+// Landscape left
+DeviceRotation landscapeLeftRotation = new DeviceRotation(0, 0, 270);
+driver.rotate(landscapeLeftRotation);
+
+// Reset
+driver.rotate(new DeviceRotation(0, 0, 0));
+
+// Get Rotation
+driver.rotation();
+```
