@@ -20,7 +20,14 @@ const appiumSideBar = [
       {
         text: "iOS",
         items: [
-          { text: "Touch", link: "/auto-frameworks/appium/ios/touch.md" },
+          {
+            text: "Touch (@Deprecated)",
+            link: "/auto-frameworks/appium/ios/touch.md",
+          },
+          {
+            text: "Gestures",
+            link: "/auto-frameworks/appium/ios/gestures.md",
+          },
         ],
       },
       {

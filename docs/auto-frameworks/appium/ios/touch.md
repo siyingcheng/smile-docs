@@ -11,7 +11,11 @@ categories:
   - Automation Framework
 ---
 
-# IOS Touch <Badge type="tip" text="Appium" /><Badge type="warning" text="Automation Framework" />
+# IOS Touch <Badge type='danger' text='@Deprecated' /><Badge type="tip" text="Appium" /><Badge type="warning" text="Automation Framework" />
+
+::: tip
+[Official Document](https://appium.github.io/appium.io/docs/en/writing-running-appium/touch-actions/) :star2:
+:::
 
 Touch basic usage:
 
