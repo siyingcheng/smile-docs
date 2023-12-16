@@ -62,9 +62,9 @@ js.executeScript("mobile: swipe", params);
 ## mobile: scroll
 
 Scrolls the element or the whole screen. Different scrolling strategies are
-supported. Arguments define the chosen strategy: either `name`, `direction, 
-`predicateString`or`toVisible`in that order. All strategies are exclusive and 
-only one strategy can be applied at a single moment of time. Use`mobile: scroll`
+supported. Arguments define the chosen strategy: either `name`, `direction`,
+`predicateString` or `toVisible` in that order. All strategies are exclusive and
+only one strategy can be applied at a single moment of time. Use `mobile: scroll`
 to emulate precise scrolling in tables or collection views, where it is already
 known to which element the scrolling should be performed. Although, there is one
 known limitation there: in case it is necessary to perform too many scroll gestures
@@ -92,4 +92,159 @@ Usage examples:
 
 ```python
 driver.execute_script('mobile: scroll', {'direction': 'down'});
+```
+
+## mobile: pinch
+
+Performs pinch gesture on the given element or on the application element.
+
+Supported arguments：
+
+- _element_: The internal element identifier (as hexadecimal hash string) to pinch
+  on. Application element will be used instead if this parameter is not provided
+- _scale_: Pinch scale of type float. Use a scale between 0 and 1 to "pinch close"
+  or zoom out and a scale greater than 1 to "pinch open" or zoom in. Mandatory
+  parameter
+- _velocity_: The velocity of the pinch in scale factor per second (float value).
+  Mandatory parameter
+
+Usage examples:
+
+```ruby
+execute_script 'mobile: pinch', scale: 0.5, velocity: 1.1, element: element.ref
+```
+
+## mobile: doubleTap
+
+Performs double tap gesture on the given element or on the screen.
+
+Supported arguments:
+
+- _element_: The internal element identifier (as hexadecimal hash string) to
+  double tap on
+- _x_: Screen x tap coordinate of type float. Mandatory parameter only if element
+  is not set
+- _y_: Screen y tap coordinate of type float. Mandatory parameter only if element
+  is not set
+
+Usage examples:
+
+```javascript
+driver.execute("mobile: doubleTap", { element: element.value.ELEMENT });
+```
+
+## mobile: touchAndHold
+
+Performs long press gesture on the given element or on the screen.
+
+Supported arguments:
+
+- _element_: The internal element identifier (as hexadecimal hash string) to
+  long tap on
+- _duration_: The float duration of press action in seconds. Mandatory parameter
+- _x_: Screen x long tap coordinate of type float. Mandatory parameter only if
+  element is not set
+- _y_: Screen y long tap coordinate of type float. Mandatory parameter only if
+  element is not set
+
+Usage examples:
+
+```c#
+// c#
+Dictionary<string, object> tfLongTap = new Dictionary<string, object>();
+tfLongTap.Add("element", element.Id);
+tfLongTap.Add("duration", 2.0);
+((IJavaScriptExecutor)driver).ExecuteScript("mobile: touchAndHold", tfLongTap);
+```
+
+## mobile: twoFingerTap
+
+Performs two finger tap gesture on the given element or on the application element.
+
+Supported arguments:
+
+- _element_: The internal element identifier (as hexadecimal hash string) to
+  double tap on. Application element will be used instead if this parameter is not
+  provided.
+
+Usage examples:
+
+```c#
+// c#
+Dictionary<string, object> tfTap = new Dictionary<string, object>();
+tfTap.Add("element", element.Id);
+((IJavaScriptExecutor)driver).ExecuteScript("mobile: twoFingerTap", tfTap);
+```
+
+## mobile: tap
+
+Performs tap gesture by coordinates on the given element or on the screen.
+
+Supported arguments:
+
+- _element_: The internal element identifier (as hexadecimal hash string) to long
+  tap on. x and y tap coordinates will be calculated relatively to the current
+  element position on the screen if this argument is provided. Otherwise they
+  should be calculated relatively to screen borders.
+- _x_: x tap coordinate of type float. Mandatory parameter
+- _y_: y tap coordinate of type float. Mandatory parameter
+
+Usage examples:
+
+```php
+// PHP
+$params = array(array('x' => 100.0, 'y' => 50.0, 'element' => element.GetAttribute("id")));
+$driver->executeScript("mobile: tap", $params);
+```
+
+## mobile: dragFromToForDuration
+
+Performs drag and drop gesture by coordinates. This can be done either on an
+element or on the screen
+
+Supported arguments:
+
+- _element_: The internal element identifier (as hexadecimal hash string) to
+  perform drag on. All the coordinates will be calculated relatively this this
+  element position on the screen. Absolute screen coordinates are expected if this
+  argument is not set
+- _duration_: Float number of seconds in range [0.5, 60]. How long the tap gesture
+  at starting drag point should be before to start dragging. Mandatory parameter
+- _fromX_: The x coordinate of starting drag point (type float). Mandatory parameter
+- _fromY_: The y coordinate of starting drag point (type float). Mandatory parameter
+- _toX_: The x coordinate of ending drag point (type float). Mandatory parameter
+- _toY_: The y coordinate of ending drag point (type float). Mandatory parameter
+
+Usage examples:
+
+```java
+// Java
+JavascriptExecutor js = (JavascriptExecutor) driver;
+Map<String, Object> params = new HashMap<>();
+params.put("duration", 1.0);
+params.put("fromX", 100);
+params.put("fromY", 100);
+params.put("toX", 200);
+params.put("toY", 200);
+params.put("element", ((RemoteWebElement) element).getId());
+js.executeScript("mobile: dragFromToForDuration", params);
+```
+
+## mobile: alert
+
+Performs operations on NSAlert instance.
+
+Supported arguments:
+
+- _action_: The following actions are supported: `accept`, `dismiss` and `getButtons`.
+  Mandatory parameter
+- _buttonLabel_: The label text of an existing alert button to click on.
+  This is an optional parameter and is only valid in combination with accept and
+  dismiss actions.
+
+Usage examples:
+
+```python
+# Python
+driver.execute_script('mobile: alert', {'action': 'accept', 'buttonLabel': 'My Cool Alert Button'});
 ```
