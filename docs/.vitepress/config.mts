@@ -65,10 +65,10 @@ export default defineConfig({
         activeMatch: "/software/",
       },
       {
-        text: "Automation Frameworks",
+        text: "Frameworks",
         items: [
           {
-            text: "Appium",
+            text: "📱 Appium",
             link: "/auto-frameworks/appium/",
           },
         ],

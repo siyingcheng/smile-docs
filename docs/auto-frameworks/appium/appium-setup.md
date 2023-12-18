@@ -109,8 +109,42 @@ Appium's Python client, etc...) with a user interface. There's an interface for
 specifying which Appium server to use, which capabilities to set, and then interacting
 with elements and other Appium commands once you've started a session.
 
+## Install Appium Doctor (Optional)
+
+::: tip
+Official Repository: [_here_](https://github.com/appium/appium-doctor)
+:::
+
+Attempts to diagnose and fix common Node, iOS and Android configuration issues
+before starting Appium.
+
+Install:
+
+```shell
+npm install appium-doctor -g
+```
+
+Usage:
+
+```shell
+➜  appium-doctor -h
+
+Usage: appium-doctor.js [options, defaults: --ios --android]
+
+Options:
+  --ios       Check iOS setup                             [boolean]
+  --android   Check Android setup                         [boolean]
+  --dev       Check dev setup                             [boolean]
+  --debug     Show debug messages                         [boolean]
+  --yes       Always respond yes                          [boolean]
+  --no        Always respond no                           [boolean]
+  --demo      Run appium-doctor demo (for dev).           [boolean]
+  -h, --help  Show help                                   [boolean]
+```
+
 ## Others
 
 **Demo Apps**:
 
 1. From [saucelabs repository](https://github.com/saucelabs/my-demo-app-rn/)
+2. From [WebDriverIO](https://github.com/webdriverio/native-demo-app)

@@ -185,3 +185,96 @@ driver.rotate(new DeviceRotation(0, 0, 0));
 // Get Rotation
 driver.rotation();
 ```
+
+### Gestures (by driver.perform)
+
+#### SWIPE
+
+```java
+public void swipe(final Direction direction, int distance) {
+    swipe(direction, null, distance);
+}
+
+public void swipe(final Direction direction, final WebElement element, int distance) {
+    final var start = getSwipeStartPosition(element);
+    final var end = getSwipeEndPosition(direction, element, distance);
+
+    final var sequence = singleFingerSwipe(FINGER_1, 0, start, end);
+    this.driver.perform(singleton(sequence));
+}
+
+private Sequence singleFingerSwipe(final String fingerName, final int index, final Point start, final Point end) {
+    final var finger = new PointerInput(TOUCH, fingerName);
+    final var sequence = new Sequence(finger, index);
+
+    sequence.addAction(finger.createPointerMove(ZERO, viewport(), start.getX(), start.getY()));
+    sequence.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+
+    if (Objects.nonNull(end)) {
+        sequence.addAction(new Pause(finger, ofMillis(500)));
+        sequence.addAction(finger.createPointerMove(ofMillis(500), viewport(), end.getX(), end.getY()));
+    }
+
+    sequence.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+    return sequence;
+}
+```
+
+#### TAP
+
+```java
+public void tap(final WebElement element) {
+    final var start = getElementCenter(element);
+    final var sequence = singleFingerSwipe(FINGER_1, 0, start, null);
+
+    this.driver.perform(singleton(sequence));
+}
+```
+
+#### DRAG TO
+
+```java
+public void dragTo(final WebElement source, final WebElement target) {
+    final var start = getElementCenter(source);
+    final var end = getElementCenter(target);
+
+    final var sequence = singleFingerSwipe(FINGER_1, 0, start, end);
+    this.driver.perform(singleton(sequence));
+}
+```
+
+#### ZOOM IN
+
+```java
+public void zoomIn(final WebElement element, int distance) {
+    final var start = getSwipeStartPosition(element);
+    final var start1 = new Point(start.getX() - 50, start.getY());
+    final var start2 = new Point(start.getX() + 50, start.getY());
+
+    final var end1 = getSwipeEndPosition(LEFT, element, distance);
+    final var end2 = getSwipeEndPosition(RIGHT, element, distance);
+
+
+    final var sequence1 = singleFingerSwipe(FINGER_1, 0, start1, end1);
+    final var sequence2 = singleFingerSwipe(FINGER_2, 0, start2, end2);
+    this.driver.perform(List.of(sequence1, sequence2));
+}
+```
+
+#### ZOOM OUT
+
+```java
+public void zoomOut(final WebElement element, int distance) {
+    final var start = getSwipeStartPosition(element);
+    final var start1 = new Point(start.getX() - 50, start.getY());
+    final var start2 = new Point(start.getX() + 50, start.getY());
+
+    final var end1 = getSwipeEndPosition(RIGHT, element, distance);
+    final var end2 = getSwipeEndPosition(LEFT, element, distance);
+
+    final var sequence1 = singleFingerSwipe(FINGER_1, 0, end1, start1);
+    final var sequence2 = singleFingerSwipe(FINGER_2, 0, end2, start2);
+    this.driver.perform(List.of(sequence1, sequence2));
+}
+```
