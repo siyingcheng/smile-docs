@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { withMermaid } from "vitepress-plugin-mermaid";
 
 const appiumSideBar = [
   {
@@ -21,11 +22,11 @@ const appiumSideBar = [
         text: "iOS",
         items: [
           {
-            text: "Touch (@Deprecated) ⛔",
+            text: "Touch (@Deprecated) 👎",
             link: "/auto-frameworks/appium/ios/touch.md",
           },
           {
-            text: "Gestures (W3C) 📖",
+            text: "Gestures (W3C) 👍",
             link: "/auto-frameworks/appium/ios/gestures.md",
           },
         ],
@@ -60,52 +61,57 @@ const softwareSidebar = [
 ];
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
-  title: "Let's do it",
-  description: "A pages site write by Simon",
-  base: "/smile-docs",
-  themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: "Home", link: "/" },
-      {
-        text: "Software",
-        link: "/software/opencv4nodejs-macos",
-        activeMatch: "/software/",
+export default withMermaid(
+  defineConfig({
+    title: "Let's do it",
+    description: "A pages site write by Simon",
+    base: "/smile-docs",
+    themeConfig: {
+      // https://vitepress.dev/reference/default-theme-config
+      nav: [
+        { text: "Home", link: "/" },
+        {
+          text: "Software",
+          link: "/software/opencv4nodejs-macos",
+          activeMatch: "/software/",
+        },
+        {
+          text: "Frameworks",
+          items: [
+            {
+              text: "📱 Appium",
+              link: "/auto-frameworks/appium/",
+            },
+          ],
+          activeMatch: "/auto-frameworks/",
+        },
+        { text: "About", link: "/about/" },
+      ],
+      sidebar: {
+        "/auto-frameworks/appium/": appiumSideBar,
+        "/software/": softwareSidebar,
       },
-      {
-        text: "Frameworks",
-        items: [
-          {
-            text: "📱 Appium",
-            link: "/auto-frameworks/appium/",
-          },
-        ],
-        activeMatch: "/auto-frameworks/",
+      socialLinks: [{ icon: "github", link: "https://github.com/siyingcheng" }],
+      lastUpdated: {
+        text: "Updated at",
+        formatOptions: {
+          dateStyle: "short",
+          timeStyle: "short",
+          hourCycle: "h24",
+        },
       },
-      { text: "About", link: "/about/" },
-    ],
-    sidebar: {
-      "/auto-frameworks/appium/": appiumSideBar,
-      "/software/": softwareSidebar,
-    },
-    socialLinks: [{ icon: "github", link: "https://github.com/siyingcheng" }],
-    lastUpdated: {
-      text: "Updated at",
-      formatOptions: {
-        dateStyle: "short",
-        timeStyle: "short",
-        hourCycle: "h24",
+      search: {
+        provider: "local",
+      },
+      outline: {
+        level: [2, 5],
       },
     },
-    search: {
-      provider: "local",
+    markdown: {
+      math: true,
     },
-    outline: {
-      level: [2, 5],
+    mermaid: {
+      // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
     },
-  },
-  markdown: {
-    math: true,
-  },
-});
+  })
+);

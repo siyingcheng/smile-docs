@@ -118,6 +118,16 @@ public static void afterClass() {
 }
 ```
 
+### Locator
+
+- [UiAutomator](https://developer.android.com/reference/androidx/test/uiautomator/package-summary.html)
+- accessibility
+- iOSNsPredicate
+- iOSClassChain
+- androidDataMatcher
+- androidViewMatcher
+- Other same as WebElement
+
 ### System Clipboard
 
 System clipboard support set and get `PLAINTEXT`, `IMAGE` and `URL`.

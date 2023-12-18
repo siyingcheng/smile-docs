@@ -16,6 +16,10 @@ categories:
 
 ::: tip
 Refer from [_here_](https://github.com/clarabez/appium-1/blob/master/docs/en/writing-running-appium/ios/ios-xctest-mobile-gestures.md)
+
+---
+
+:star: Also see [_W3C actions_](https://www.w3.org/TR/webdriver/#actions)
 :::
 
 Unfortunately Apple's XCTest framework does not natively support W3C standards for
