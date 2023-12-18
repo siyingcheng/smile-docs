@@ -74,8 +74,8 @@ public void testSwipeTillElementVisibleUsingUIAutomator() {
 
     final var scrolledLogo = AppiumBy.androidUIAutomator(
             """
-                    new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description("WebdriverIO logo"));
-                    """);
+                new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description("WebdriverIO logo"));
+                """);
 
     iosDriver.findElement(scrolledLogo);
 
