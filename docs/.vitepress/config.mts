@@ -21,11 +21,11 @@ const appiumSideBar = [
         text: "iOS",
         items: [
           {
-            text: "Touch (@Deprecated)",
+            text: "Touch (@Deprecated) ⛔",
             link: "/auto-frameworks/appium/ios/touch.md",
           },
           {
-            text: "Gestures",
+            text: "Gestures (W3C) 📖",
             link: "/auto-frameworks/appium/ios/gestures.md",
           },
         ],
@@ -33,6 +33,15 @@ const appiumSideBar = [
       {
         text: "Limitations of Appium",
         link: "/auto-frameworks/appium/appium-limitations",
+      },
+      {
+        text: "How to ❓",
+        items: [
+          {
+            text: "How to swipe to element till visible?",
+            link: "/auto-frameworks/appium/How-to-swipe-to-element-till-visible",
+          },
+        ],
       },
     ],
   },
