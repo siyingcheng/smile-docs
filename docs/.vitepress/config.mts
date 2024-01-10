@@ -60,6 +60,19 @@ const softwareSidebar = [
   },
 ];
 
+const sqlSideBar = [
+  {
+    text: "SQL",
+    link: "/notes/sql/",
+    items: [
+      {
+        text: "How to connect database",
+        link: "/notes/sql/How-to-connect-db.md",
+      },
+    ],
+  },
+];
+
 // https://vitepress.dev/reference/site-config
 export default withMermaid(
   defineConfig({
@@ -70,6 +83,16 @@ export default withMermaid(
       // https://vitepress.dev/reference/default-theme-config
       nav: [
         { text: "Home", link: "/" },
+        {
+          text: "Study Notes",
+          items: [
+            {
+              text: "SQL",
+              link: "/notes/sql/",
+            },
+          ],
+          activeMatch: "/notes/",
+        },
         {
           text: "Software",
           link: "/software/opencv4nodejs-macos",
@@ -90,6 +113,7 @@ export default withMermaid(
       sidebar: {
         "/auto-frameworks/appium/": appiumSideBar,
         "/software/": softwareSidebar,
+        "/notes/sql/": sqlSideBar,
       },
       socialLinks: [{ icon: "github", link: "https://github.com/siyingcheng" }],
       lastUpdated: {
