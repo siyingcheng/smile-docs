@@ -81,6 +81,10 @@ const sqlSideBar = [
         text: "SQL Operators",
         link: "/notes/sql/SQL-Operators.md",
       },
+      {
+        text: "PostgreSQL Commands",
+        link: "/notes/sql/PostgreSQL-commands.md",
+      },
     ],
   },
 ];
