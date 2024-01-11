@@ -82,6 +82,22 @@ const sqlSideBar = [
         link: "/notes/sql/SQL-Operators.md",
       },
       {
+        text: "DDL",
+        link: "/notes/sql/DDL.md",
+      },
+      {
+        text: "DML",
+        link: "/notes/sql/DML.md",
+      },
+      {
+        text: "DQL",
+        link: "/notes/sql/DQL.md",
+      },
+      {
+        text: "Functions",
+        link: "/notes/sql/Functions.md",
+      },
+      {
         text: "PostgreSQL Commands",
         link: "/notes/sql/PostgreSQL-commands.md",
       },

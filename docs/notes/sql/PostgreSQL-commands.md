@@ -30,3 +30,4 @@ categories:
 - `\sf function_name`: Show the definition of a specific function.
 - `\x`: Toggles between expanded and no-expanded output for query results, making
   it easier to read.
+- `\i sql_file_path`: Executes batch SQL commands from file. Example: `\i /Volumes/Data/download/person.sql`

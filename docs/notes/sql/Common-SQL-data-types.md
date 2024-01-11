@@ -48,3 +48,7 @@ categories:
 - IMAGE
 - JSON
 - ...
+
+## Official Documentation
+
+- [PostgreSQL Data Types](https://www.postgresql.org/docs/current/datatype.html)
