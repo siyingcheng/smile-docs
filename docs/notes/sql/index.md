@@ -17,7 +17,7 @@ categories:
 ## What is SQL?
 
 `SQL`(Structure Query Language) is a programming language to communicate with
-databases. SQL commands helps you to store, process, analyze and manipulate
+databases. SQL commands help you to store, process, analyze and manipulate
 databases.
 
 ## Documentations Collection

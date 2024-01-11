@@ -69,6 +69,18 @@ const sqlSideBar = [
         text: "How to connect database",
         link: "/notes/sql/How-to-connect-db.md",
       },
+      {
+        text: "Types of SQL Commands",
+        link: "/notes/sql/Types-of-SQL-commands.md",
+      },
+      {
+        text: "Common SQL Data Types",
+        link: "/notes/sql/Common-SQL-data-types.md",
+      },
+      {
+        text: "SQL Operators",
+        link: "/notes/sql/SQL-Operators.md",
+      },
     ],
   },
 ];
@@ -84,7 +96,7 @@ export default withMermaid(
       nav: [
         { text: "Home", link: "/" },
         {
-          text: "Study Notes",
+          text: "Notes",
           items: [
             {
               text: "SQL",
