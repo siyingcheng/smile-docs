@@ -106,6 +106,14 @@ const sqlSideBar = [
         link: "/notes/sql/Trigger.md",
       },
       {
+        text: "Procedures",
+        link: "/notes/sql/Procedures.md",
+      },
+      {
+        text: "SQL Injection",
+        link: "/notes/sql/SQL-Injection.md",
+      },
+      {
         text: "PostgreSQL Commands",
         link: "/notes/sql/PostgreSQL-commands.md",
       },
