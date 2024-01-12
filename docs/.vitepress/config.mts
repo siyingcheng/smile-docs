@@ -117,6 +117,10 @@ const sqlSideBar = [
         text: "PostgreSQL Commands",
         link: "/notes/sql/PostgreSQL-commands.md",
       },
+      {
+        text: "Questions Collections",
+        link: "/notes/sql/Questions-Collections.md",
+      },
     ],
   },
 ];

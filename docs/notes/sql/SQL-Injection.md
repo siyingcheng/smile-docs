@@ -18,6 +18,8 @@ categories:
 https://sourceforge.net/projects/owaspbwa/
 :::
 
+## What is the SQL Injection
+
 SQL injection is a dangerous web security vulnerability that allows attackers to
 exploit weaknesses in the way user input is handled. By injecting malicious SQL
 statements into forms or other input fields, attackers can manipulate the database
