@@ -34,7 +34,9 @@ Here are the different types of the JOINs in SQL:
 `(INNER) JOIN`: Selects all rows from both the tables as long as the condition
 is satisfied. Creates the result-set by combining all rows from both the tables
 where the condition satisfied i.e value of the common filed will be the same.
-![INNER JOIN](https://www.w3schools.com/sql/img_inner_join.png)
+
+<img src="https://www.w3schools.com/sql/img_inner_join.png" class='center'
+caption='FULL JOIN' title='FULL JOIN' />
 
 ::: details Click to view examples
 
@@ -60,7 +62,9 @@ JOIN car USING (car_id);
 matched rows for the table on the right side of the join. For the rows for which
 there is no matching row on the right side, the result-set will contain _`NULL`_.
 LEFT JOIN is also known as `LEFT OUTER JOIN`.
-![LEFT JOIN](https://www.w3schools.com/sql/img_left_join.png)
+
+<img src='https://www.w3schools.com/sql/img_left_join.png' class='center'
+caption='LEFT JOIN' title='LEFT JOIN' />
 
 ::: details Click to view examples
 
@@ -84,7 +88,8 @@ on the right side of the join and matching rows for the table on the left side o
 the join. For the rows for which there is no matching row ont he left side, the
 result-set will contain _`NULL`_. RIGHT JOIN is also known as `RIGHT OUTER JOIN`.
 
-![RIGHT JOIN](https://www.w3schools.com/sql/img_right_join.png)
+<img src='https://www.w3schools.com/sql/img_right_join.png' class='center'
+caption='RIGHT JOIN' title='RIGHT JOIN' />
 
 ::: details Click to view examples
 
@@ -103,7 +108,8 @@ ON StudentCourse.ROLL_NO = Student.ROLL_NO;
 RIGHT JOIN. The result-set will contain all the rows from both tables. For the
 rows for which there is no matching, the result-set will contain _`NULL`_ values.
 
-![FULL OUTER JOIN](https://www.w3schools.com/sql/img_full_outer_join.png)
+<img src='https://www.w3schools.com/sql/img_full_outer_join.png' class='center' 
+caption='FULL JOIN' title='FULL JOIN'/>
 
 ::: details Click to view examples
 
