@@ -98,6 +98,10 @@ const sqlSideBar = [
         link: "/notes/sql/Functions.md",
       },
       {
+        text: "JOIN",
+        link: "/notes/sql/JOIN.md",
+      },
+      {
         text: "PostgreSQL Commands",
         link: "/notes/sql/PostgreSQL-commands.md",
       },

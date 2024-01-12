@@ -26,6 +26,7 @@ databases.
 - [W3Schools SQL Tutorial](https://www.w3schools.com/sql/)
 - [Khan Academy SQL Course](https://www.khanacademy.org/computing/computer-programming/sql)
 - [Interactive SQL Playground](https://www.sqlzoo.net/)
+- [Geeks for geeks SQL tutorial](https://www.geeksforgeeks.org/sql-tutorial/)
 
 Other useful sites:
 
