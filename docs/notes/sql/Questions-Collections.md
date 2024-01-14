@@ -94,3 +94,225 @@ When to Use Each:
 
 - Use WHERE to filter rows based on specific conditions before aggregation.
 - Use HAVING to filter groups of rows based on aggregate values after aggregation.
+
+## How is DROP Different from TRUNCATE?
+
+DROP:
+
+- Definition: Removes the table definition and all its data permanently.
+- Operation: Deletes the table from the database schema, freeing up the associated
+  storage space.
+- Impact: Once data is dropped, it's unrecoverable. Use with caution!
+- Use cases: Removing unused or unwanted tables, restructuring the database schema.
+
+TRUNCATE:
+
+- Definition: Removes all rows from a table, leaving the table definition intact.
+- Operation: Empties the table but retains the table structure and allocated storage
+  space.
+- Impact: Data is gone, but the table still exists and can be populated again.
+- Use cases: Resetting test data, clearing temporary tables, quickly removing bulk
+  data.
+
+## Find the lowest salary of the employees in each department {#employees-table}
+
+<img src='../../public/images/sql-qestions-01.png' title='Employees Table' 
+caption='Employees Table' class='center' />
+
+::: details Click to view answers
+
+```sql
+SELECT dept, MIN(salary) as lowest_salary
+FROM employees
+GROUP BY salary;
+```
+
+:::
+
+## Which query will help you fetch unique values from a colum in a table?
+
+```txt{3}
+a) SELECT UNIQUE column_name FROM table_name;
+b) SELECT column_name FROM table_name WHERE COUNT(column_name) = 1;
+c) SELECT DISTINCT column_name FROM table_name;
+d) SELECT column_name FROM table_name HAVING COUNT(column_name) = 1;
+
+```
+
+Answer: C.
+
+## White the SQL query to fetch unique departments from the Employees table
+
+Employees table in [_this section_](#employees-table).
+
+::: details Click to view answers
+
+```sql
+SELECT DISTINCT dept FROM employees;
+```
+
+:::
+
+## Write an SQL query to fetch the unique values of departments and print their length
+
+Employees table in [_this section_](#employees-table).
+
+::: details Click to view answers
+
+```sql
+SELECT DISTINCT dept, LENGTH(dept) AS length_dept
+FROM employees;
+```
+
+:::
+
+## What is the use of the DATEDIFF function in SQL?
+
+The `DATEDIFF` function returns the number of days between two date, datetime,
+or timestamp values. (MySQL: ✅, PostgreSQL: 🚫)
+
+::: details Click to view answers
+
+```sql
+SELECT DATEDIFF('2021-01-16', '2023-01-10'); -- -724
+SELECT DATEDIFF(NOW(), '2024-01-01'); -- 9
+```
+
+:::
+
+## Write an SQL query to display the departments that have more that 2 employees
+
+Employees table in [_this section_](#employees-table).
+
+::: details Click to view answers
+
+```sql
+SELECT dept, COUNT(emp_id)
+FROM employees
+GROUP BY dept
+HAVING COUNT(emp_id) > 2;
+```
+
+:::
+
+## Display the details of the employee for all the departments except Marketing
+
+Employees table in [_this section_](#employees-table).
+
+::: details Click to view answers
+
+```sql
+SELECT *  FROM employees WHERE dept <> 'Marketing';
+-- or
+SELECT *  FROM employees WHERE dept != 'Marketing';
+```
+
+:::
+
+## Write an SQL query to print details of the employees who have joined in before April 2010 and after May 2005
+
+Employees table in [_this section_](#employees-table).
+
+::: details Click to view answers
+
+```sql
+SELECT * FROM employees
+WHERE doj > '2005-05-31'
+AND doj < '2010-04-01'
+```
+
+:::
+
+## Find the employee with the 3rd highest salary from the table
+
+Employees table in [_this section_](#employees-table).
+
+::: details Click to view answers
+
+```sql
+SELECT * FROM employee
+ORDER BY salary DESC
+OFFSET 2
+LIMIT 1;
+
+-- or
+SELECT * FROM (
+  SELECT * FROM employees
+  ORDER BY salary DESC LIMIT 3
+) AS res
+ORDER BY salary LIMIT 1;
+```
+
+:::
+
+## Print all the alternate records in a table
+
+::: details Click to view answers
+
+```sql
+WITH cte AS (
+  SELECT *, ROW_NUMBER() OVER (ORDER BY emp_id) as rn
+  FROM employees;
+)
+```
+
+:::
+
+## Write the SQL query to fetch all the duplicate rows in a table
+
+<img src='../../public/images/sql-questions-02.png' title='Duplicate Table'
+caption='Duplicate Table' class='center' />
+
+::: details Click to view answers
+
+```sql
+SELECT e_id, name, COUNT(*) as dup_count
+FROM dup_employees
+GROUP BY e_id, name, age
+HAVING COUNT(e_id) > 1
+  AND COUNT(name) > 1
+  AND COUNT(age) > 1;
+```
+
+:::
+
+## Display the employees with exactly 2 A's in their name
+
+Employees table in [_this section_](#employees-table).
+
+::: details Click to view answers
+
+```sql
+SELECT * FROM employees
+WHERE LENGTH(emp_name) - LENGTH(REPLACE(UPPER(emp_name), 'A', '')) = 2;
+```
+
+:::
+
+## Given a string, how will you extract four characters staring from the second position
+
+::: details Click to view answers
+
+```sql
+SELECT SUBSTR('Michael Ballack', 2, 4);
+SELECT SUBSTRING('Michael Ballack', 2, 4);
+```
+
+:::
+
+## How does SELF JOIN work?
+
+The `SELF JOIN0` joins a table to itself. The table must contain a column (x)
+that acts as the primary key and a different column (y) that stores values that
+can be matched up with the values in column x.
+
+## Which of the following is called a virtual table in SQL
+
+```txt{3}
+a) Empty Table
+b) Self Join
+c) View
+d) Common Table Expression
+```
+
+Answer: C.
