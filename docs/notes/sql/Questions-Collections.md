@@ -261,7 +261,7 @@ WITH cte AS (
 ## Write the SQL query to fetch all the duplicate rows in a table
 
 <img src='../../public/images/sql-questions-02.png' title='Duplicate Table'
-caption='Duplicate Table' class='center' />
+caption='Duplicate Table' class='center' width='320px;' />
 
 ::: details Click to view answers
 
@@ -351,7 +351,8 @@ WHERE e.dept = 'HR';
 
 ## Write the num table, write a query to add 10 where number is 0, 20 when num is 1, else print the num itself
 
-<img src='../../public/images/sql-questions-03.png' title='num table' caption='num table' class='center' />
+<img src='../../public/images/sql-questions-03.png' title='num table' caption='num table' class='center' 
+width='320px;'/>
 
 ::: details Click to view answers
 
@@ -369,7 +370,7 @@ FROM num;
 
 ## Given a num1 table, write a query to find the sum of all positive values and the negative values
 
-<img src='../../public/images/sql-num1-table.png' title='num1 table' caption='num1 table' class='center' />
+<img src='../../public/images/sql-num1-table.png' title='num1 table' caption='num1 table' class='center' width='320px;' />
 
 ::: details Click to view answers
 
@@ -424,7 +425,7 @@ The check constraint is used to limit the values that can be inserted into a col
 ## Given 2 tables A and B, write a query to fetch values in table B that are not present in A
 
 <img src='../../public/images/sql-table-a-b.png' title='Table A and B' caption='Table A and B'
-class='center' />
+class='center' width='320px;'/>
 
 ::: details Click to view answers
 
