@@ -41,7 +41,7 @@ select * from person p order by p.date_of_birth DESC limit 10;
 SELECT * FROM person OFFSET 10 LIMIT 10;
 SELECT * FROM person OFFSET 5 FETCH FIRST 5 ROW ONLY;
 SELECT * FROM person OFFSET 5 FETCH FIRST ROW ONLY;
--- equlas: SELECT * FROM person OFFSET 5 FETCH FIRST 1 ROW ONLY;
+-- equals: SELECT * FROM person OFFSET 5 FETCH FIRST 1 ROW ONLY;
 
 -- condition
 SELECT * FROM employee WHERE country_of_birth = 'China';

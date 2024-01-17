@@ -316,3 +316,122 @@ d) Common Table Expression
 ```
 
 Answer: C.
+
+## Write an SQL query to fetch the list of employees with the same salary
+
+Employees table in [_this section_](#employees-table).
+
+::: details Click to view answers
+
+```sql
+SELECT DISTINCT e.emp_id, e.emp_name, e.salary
+FROM employees e, employees e1
+WHERE e.salary = e1.salary AND e.emp_id != e1.emp_id;
+```
+
+:::
+
+## Write an SQL query to print one row twice in results from table
+
+Employees table in [_this section_](#employees-table).
+
+::: details Click to view answers
+
+```sql
+SELECT emp_name, dept
+FROM employees e
+WHERE e.dept = 'HR'
+UNION ALL
+SELECT emp_name, dept
+FROM employees e
+WHERE e.dept = 'HR';
+```
+
+:::
+
+## Write the num table, write a query to add 10 where number is 0, 20 when num is 1, else print the num itself
+
+<img src='../../public/images/sql-questions-03.png' title='num table' caption='num table' class='center' />
+
+::: details Click to view answers
+
+```sql
+SELECT n_id
+CASE
+	WHEN n_id = 0 THEN n_id + 10
+	WHEN n_id = 1 THEN n_id + 20
+	ELSE n_id
+END AS num_add_result
+FROM num;
+```
+
+:::
+
+## Given a num1 table, write a query to find the sum of all positive values and the negative values
+
+<img src='../../public/images/sql-num1-table.png' title='num1 table' caption='num1 table' class='center' />
+
+::: details Click to view answers
+
+```sql
+SELECT SUM(CASE WHEN num1 > 0 THEN num1 ELSE 0 END) AS positive_sum,
+       SUM(CASE WHEN num1 < 0 THEN num1 ELSE 0 END) AS negative_sum
+FROM num1;
+```
+
+:::
+
+## What is the difference between PRIMARY KEY and FOREIGN KEY?
+
+Both **PRIMARY KEY** and **FOREIGN KEY** play crucial roles in data integrity and relationships
+between tables. However, they serve distinct purposes:
+
+**PRIMARY KEY:**
+
+- _Unique identifier_: Uniquely identifies each rows within a table. No two rows can
+  have the same value for the primary key columns.
+- _Enforces data integrity_: Prevents duplicate entries and ensure consistent identification
+  of rows.
+- _Typically a single column or a combination of columns_: Offers optimal performance
+  for data retrieval and joins.
+- _Can't be NULL_: Every row must have a defined value for the primary key.
+
+**FOREIGN KEY:**
+
+- _References another table's primary key:_ Creates a link between two tables, ensuring
+  data consistency across them.
+- _Maintains referential integrity_: Prevents orphaned rows in the referencing table
+  by ensuring referenced rows exist in the referenced table.
+- _Can be a single column or combination of columns_: Must match the referenced
+  tables's primary key structure.
+- _Can be NULL_: Allows for optional associations or incomplete data in the referencing
+  table.
+
+## What is the difference between PRIMARY KEY and UNION?
+
+| Feature        | PRIMARY KEY                           | UNION                                         |
+| -------------- | ------------------------------------- | --------------------------------------------- |
+| Purpose        | Data integrity, unique identification | Combing data sets                             |
+| Scope          | Within a single table                 | Across multiple tables or queries             |
+| Uniqueness     | Enforces unique rows                  | Removes duplicate rows in the combined result |
+| Data structure | Specific columns define the key       | Flexible, based on query results              |
+| Null Values    | NOt allowed                           | Allowed in some UNION variables               |
+
+## What is a check constraint in SQL?
+
+The check constraint is used to limit the values that can be inserted into a column.
+
+## Given 2 tables A and B, write a query to fetch values in table B that are not present in A
+
+<img src='../../public/images/sql-table-a-b.png' title='Table A and B' caption='Table A and B'
+class='center' />
+
+::: details Click to view answers
+
+```sql
+SELECT id FROM b
+LEFT JOIN a USING (id)
+WHERE a.id IS NULL;
+```
+
+:::
