@@ -125,6 +125,23 @@ const sqlSideBar = [
   },
 ];
 
+const postmanSideBar = [
+  {
+    text: "SQL",
+    link: "/notes/postman/",
+    items: [
+      {
+        text: "Dynamic Variables",
+        link: "/notes/postman/Dynamic-Variables.md",
+      },
+      {
+        text: "Write Scripts",
+        link: "/notes/postman/Write-Scripts.md",
+      },
+    ],
+  },
+];
+
 // https://vitepress.dev/reference/site-config
 export default withMermaid(
   defineConfig({
@@ -141,6 +158,10 @@ export default withMermaid(
             {
               text: "SQL",
               link: "/notes/sql/",
+            },
+            {
+              text: "Postman",
+              link: "/notes/postman/",
             },
           ],
           activeMatch: "/notes/",
@@ -166,6 +187,7 @@ export default withMermaid(
         "/auto-frameworks/appium/": appiumSideBar,
         "/software/": softwareSidebar,
         "/notes/sql/": sqlSideBar,
+        "/notes/postman/": postmanSideBar,
       },
       socialLinks: [{ icon: "github", link: "https://github.com/siyingcheng" }],
       lastUpdated: {
