@@ -31,6 +31,21 @@ HAVING condition1, condition2...
 ORDER BY col1, col2...
 ```
 
+An example:
+
+```sql
+  SELECT customer_id, COUNT(order_id) AS total_orders,
+         SUM(order_amount) AS total_spent
+    FROM customers
+    JOIN orders
+      ON customers.id = orders.customer_id
+   WHERE order_date >= '2024-01-01'
+GROUP BY customer_id
+  HAVING total_spent >= 1000
+ORDER BY total_spent DESC
+   LIMIT 10;
+```
+
 ::: details Click to view examples
 
 ```sql
@@ -94,6 +109,32 @@ FROM employee
 GROUP BY country_of_birth
 HAVING COUNT(*) > 10
 ORDER BY country_of_birth;
+```
+
+:::
+
+## Optimizing SQL Queries
+
+Sargable: **S**earch **ARG**ument **ABLE**
+
+To write sagable queries:
+
+- Avoid using functions or calculations on indexed columns in the WHERE clause.
+- Use direct comparisons when possible, instead of wrapping the column in a function.
+- If we need to use a function on a column, consider creating a computed column
+  or a function-based index, if the database system support it.
+
+::: detail Click to view some examples
+
+```sql
+SELECT ... WHERE Year(myDate) = 2008; -- Bad
+SELECT ... WHERE myDate >= '2008-01-01' AND myDate < '2009-01-01'; -- Fixed
+
+SELECT ... WHERE Substring(dealerName, 4) = 'Ford'; -- Bad
+SELECT ... WHERE dealerName LIKE 'Ford%'; -- Fixed
+
+SELECT ... WHERE DateDiff(mm, orderDate, GetDate()) >= 30; -- Bad
+SELECT ... WHERE orderDate < DateAdd(mm, -30); -- Fixed
 ```
 
 :::
