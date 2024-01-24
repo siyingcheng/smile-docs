@@ -115,9 +115,9 @@ ORDER BY country_of_birth;
 
 ## Optimizing SQL Queries
 
-Sargable: **S**earch **ARG**ument **ABLE**
+SARGABLE: **S**earch **ARG**ument **ABLE**
 
-To write sagable queries:
+To write SARGABLE queries:
 
 - Avoid using functions or calculations on indexed columns in the WHERE clause.
 - Use direct comparisons when possible, instead of wrapping the column in a function.
