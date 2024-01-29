@@ -3,23 +3,23 @@
 layout: home
 
 hero:
-  name: "Pages build by VitePress"
-  text: "A VitePress Pages Site"
-  tagline: My great project tagline
+  name: "Simon's Notes"
+  text: "Build by VitePress"
+  tagline: Latest notes
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: SQL
+      link: /notes/sql/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Postman
+      link: /notes/postman/
+    - theme: alt
+      text: Appium
+      link: /auto-frameworks/appium/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 📝
+    details: Some notes about Automation QA technique basic usage.
+  - title: 📎
+    details: Record troubleshooting steps and solutions.
 ---
-

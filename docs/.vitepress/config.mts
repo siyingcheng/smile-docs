@@ -127,7 +127,7 @@ const sqlSideBar = [
 
 const postmanSideBar = [
   {
-    text: "SQL",
+    text: "Postman",
     link: "/notes/postman/",
     items: [
       {
